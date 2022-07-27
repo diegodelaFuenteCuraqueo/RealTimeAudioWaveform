@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
@@ -23,9 +23,9 @@ export default function useAudioAnalizer(HTMLMediaElementId) {
         for (let i = 0; i < data.length; i++) {
           normalizedSpectrum[i] = data[i] / 256;
         }
+        //const normalizedSpectrum2 = data.map(val => {return val / 256});
+        //console.log(normalizedSpectrum2);
         setAmpValues(normalizedSpectrum);
-
-        //var c = document.getElementById("idCanvas");
       }
     }, 50);
   }, []);

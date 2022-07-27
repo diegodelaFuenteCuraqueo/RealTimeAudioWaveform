@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo, useState } from "react";
+import React, { useRef, useEffect } from "react";
 
 export default function Waveform({
   normalizedSpectrum,
@@ -11,7 +11,7 @@ export default function Waveform({
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = "black";
+    context.fillStyle = "#8fba39";
     context.beginPath();
     for (let i = 0; i < normalizedSpectrum.length - 1; i++) {
       context.moveTo(i, normalizedSpectrum[i] * canvas.height);
